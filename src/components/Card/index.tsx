@@ -31,12 +31,10 @@ const Card: React.FC<ICardProps> = ({
 
   const cart = useCart();
 
-  const [activeModal, setActiveModal] = useState<boolean>(false);
   const modalRef = useRef<IModalHandles>(null);
 
   const handleOpenModal = useCallback(() => {
     modalRef.current?.handleOpenModal();
-    setActiveModal(false);
   }, []);
 
   const [bougthItem, setBougthItem] = useState<boolean>(false);

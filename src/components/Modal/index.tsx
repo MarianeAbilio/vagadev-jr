@@ -3,7 +3,6 @@ import React, {
   useCallback,
   useEffect,
   useImperativeHandle,
-  useRef,
   useState,
 } from 'react';
 
@@ -32,7 +31,6 @@ const BougthItem: React.ForwardRefRenderFunction<IModalHandles> = (
   ref,
 ) => {
   const [visible, setVisible] = useState(false);
-  const modalRef = useRef<IModalHandles>(null);
 
   const handleOpenModal = useCallback(() => {
     setVisible(true);
