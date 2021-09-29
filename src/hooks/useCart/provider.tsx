@@ -1,4 +1,4 @@
-import { createContext, useCallback, useState } from 'react';
+import { createContext, useState } from 'react';
 
 import { IUseCartContext } from './index';
 
@@ -10,9 +10,9 @@ CartContext.displayName = 'useCart';
 const CartProvider: React.FC = ({ children }) => {
   const [cartQuantity, setCartQuantity] = useState<number>(0);
 
-  const addQuantityCart = useCallback((productQuantity: number) => {
+  const addQuantityCart = (productQuantity: number) => {
     setCartQuantity(cartQuantity + productQuantity);
-  }, [cartQuantity]);
+  };
 
   const handlesExported = {
     addQuantityCart,
