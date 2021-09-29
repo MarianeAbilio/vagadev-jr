@@ -2,15 +2,23 @@ import styled from 'styled-components';
 
 import colors from '../../styles/colors';
 
-export const Container = styled.div`
+interface IContainer {
+  isMenuOpen: boolean;
+}
+
+export const Container = styled.div<IContainer>`
   width: 100%;
   height: 123px;
-  background-color: ${colors.darkBlue};
+  background-color: ${colors.transparent};
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  z-index: 999;
   @media screen and (max-width: 850px) {
     position: fixed;
+    height: fit-content;
+    background-color: ${props => props.isMenuOpen ? colors.darkBlue : colors.transparent};
   }
 `;
 
@@ -23,6 +31,10 @@ export const Content = styled.div`
   max-width: 1200px;
   align-items: center;
   position: relative;
+  @media screen and (max-width: 850px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
 `;
 
 export const Left = styled.div`
@@ -136,7 +148,7 @@ export const NavbarContainer = styled.div`
   top: 118px;
   left: -30px;
   @media screen and (max-width: 850px) {
-    top: 119px;
+    top: 67px;
     left: 0;
     width: 100vw;
     height: 100vh;
