@@ -11,7 +11,7 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased !important;
   }
 
-  @media screen and (max-width: 1080px) {
+  /* @media screen and (max-width: 1080px) {
     html {
       font-size: 94.75%;
     }
@@ -21,7 +21,7 @@ export default createGlobalStyle`
     html {
       font-size: 87.5%;
     }
-  }
+  } */
 
   html, body, #root {
     min-height: 100vh;

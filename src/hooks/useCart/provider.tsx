@@ -12,7 +12,7 @@ const CartProvider: React.FC = ({ children }) => {
 
   const addQuantityCart = useCallback((productQuantity: number) => {
     setCartQuantity(cartQuantity + productQuantity);
-  }, []);
+  }, [cartQuantity]);
 
   const handlesExported = {
     addQuantityCart,

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
+   
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -50,7 +51,7 @@
   <g
      id="icon_hamburguer"
      transform="translate(-382 -48)"
-     style="fill:#000000">
+     style="fill:#fff">
     <rect
        id="Retângulo_2"
        data-name="Retângulo 2"
@@ -59,7 +60,7 @@
        rx="1.5"
        transform="translate(382 48)"
        fill="#fff"
-       style="fill:#000000" />
+       style="fill:#fff" />
     <rect
        id="Retângulo_3"
        data-name="Retângulo 3"
@@ -68,7 +69,7 @@
        rx="1.5"
        transform="translate(382 58.451)"
        fill="#fff"
-       style="fill:#000000" />
+       style="fill:#fff" />
     <rect
        id="Retângulo_4"
        data-name="Retângulo 4"
@@ -77,6 +78,6 @@
        rx="1.5"
        transform="translate(382 69)"
        fill="#fff"
-       style="fill:#000000" />
+       style="fill:#fff" />
   </g>
 </svg>
