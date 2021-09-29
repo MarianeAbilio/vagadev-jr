@@ -16,7 +16,7 @@ export const Container = styled.div<IContainer>`
   position: absolute;
   z-index: 999;
   @media screen and (max-width: 850px) {
-    position: fixed;
+    position: absolute;
     height: fit-content;
     background-color: ${props => props.isMenuOpen ? colors.darkBlue : colors.transparent};
   }

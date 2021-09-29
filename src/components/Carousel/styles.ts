@@ -11,7 +11,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   @media screen and (max-width: 850px) {
-    position: fixed;
+    position: relative;
   }
 `;
 
@@ -26,11 +26,12 @@ export const BackgroundImage = styled.div`
   @media screen and (max-width: 850px) {
     background-image: url(${ImageBannerCarouselMobile});
     aspect-ratio: 5/6;
+    align-items: flex-end;
   }
   @media screen and (min-width: 851px) {
     background-image: url(${ImageBannerCarouselDesktop});
     aspect-ratio: 29/13;
-    align-items: flex-end;
+    
   }
 `;
 
@@ -130,16 +131,21 @@ export const Controller = styled.div`
   flex-direction: column;
   position: absolute;
   right: 0px;
+  
 
   @media screen and (min-width: 851px) and (max-width: 1750px) {
     transform: scale(0.75);
     right: -8px;
+    top: 80px;
   }
   @media screen and (max-width: 850px) {
     width: 100vw;
     height: 54px;
     flex-direction: row;
     bottom: -54px;
+  }
+  @media screen and (min-width: 1751px) {
+    top: 200px;
   }
 `;
 
