@@ -33,7 +33,8 @@ const Carousel: React.FC = () => {
             estratégia como o estilo de luta.
           </Text>
         </Content>
-        <Controller>
+      </BackgroundImage>
+      <Controller>
           <ControllerTop>
             <ControllerDescription>
               <ControllerDescriptionLabel>MORTAL KOMBAT</ControllerDescriptionLabel>
@@ -52,7 +53,6 @@ const Carousel: React.FC = () => {
             </SlideIndicators>
           </ControllerBottom>
         </Controller>
-      </BackgroundImage>
     </Container>
   );
 };
