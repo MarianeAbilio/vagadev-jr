@@ -5,18 +5,39 @@ import ImageBannerCarouselMobile from '../../assets/principal_banner_mobile.jpg'
 
 import colors from '../../styles/colors';
 
+export const CarouselInner = styled.div`
+  width: 100%;
+  overflow: hidden;
+  overflow: hidden;
+  @media screen and (max-width: 850px) {
+    aspect-ratio: 5/6;
+    height: 265%;
+  }
+  @media screen and (min-width: 851px) {
+    aspect-ratio: 29/13;
+  }
+`;
+export const CarouselContainer = styled.div`
+  display: flex;
+  width: 100%;
+  aspect-ratio: 29/13;
+`;
+
 export const Container = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: baseline;
   @media screen and (max-width: 850px) {
     position: relative;
   }
 `;
 
 export const BackgroundImage = styled.div`
+  transition: transform 2s;
   width: 100%;
+  position: relative;
+  z-index: -1;
   background-position-x: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,7 +52,6 @@ export const BackgroundImage = styled.div`
   @media screen and (min-width: 851px) {
     background-image: url(${ImageBannerCarouselDesktop});
     aspect-ratio: 29/13;
-    
   }
 `;
 
@@ -90,7 +110,6 @@ export const Price = styled.h1<IPrice>`
       content: ',${props => props.centsValue}';
       position: absolute;
       top: 14px;
-      
     }
   }
   @media screen and (max-width: 850px) {
@@ -113,6 +132,7 @@ export const Text = styled.p`
   max-width: 420px;
   line-height: 25px;
   padding-top: 25px;
+  white-space: break-spaces;
 
   @media screen and (min-width: 851px) and (max-width: 1230px) {
     font-size: 14px;
@@ -131,7 +151,6 @@ export const Controller = styled.div`
   flex-direction: column;
   position: absolute;
   right: 0px;
-  
 
   @media screen and (min-width: 851px) and (max-width: 1750px) {
     transform: scale(0.75);
@@ -158,7 +177,7 @@ export const ControllerTop = styled.div`
   justify-content: center;
   @media screen and (max-width: 850px) {
     height: 54px;
-    flex:1;
+    flex: 1;
     border-radius: 0 0 0 10px;
     justify-content: initial;
   }
@@ -171,7 +190,7 @@ export const ControllerBottom = styled.div`
   @media screen and (max-width: 850px) {
     height: 54px;
     border-radius: 0;
-    padding: 20px
+    padding: 20px;
   }
   @media screen and (min-width: 851px) {
     width: 100%;
@@ -225,7 +244,6 @@ export const SlideChevronIndicators = styled.div`
     margin-top: 0px;
     margin-left: 20px;
   }
-  
 `;
 
 export const IconChevron = styled.img`
