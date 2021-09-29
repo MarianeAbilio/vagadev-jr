@@ -7,12 +7,15 @@ import {
   Price
 } from './styles';
 
+import useCart from '../../hooks/useCart';
+
 import colors from '../../styles/colors';
 
 import BoughtItem, { IModalHandles } from '../Modal';
 
 import ComponentButton from '../Button';
 import { useCallback, useRef, useState } from 'react';
+import ComponentVisible from '../Visible';
 
 interface ICardProps {
   imageURL: string;
@@ -26,22 +29,23 @@ const Card: React.FC<ICardProps> = ({
   price
 }) => {
 
+  const cart = useCart();
+
   const [activeModal, setActiveModal] = useState<boolean>(false);
   const modalRef = useRef<IModalHandles>(null);
 
-  const handleOpenAccountModal = useCallback(() => {
+  const handleOpenModal = useCallback(() => {
     modalRef.current?.handleOpenModal();
     setActiveModal(false);
   }, []);
 
-  const handleCloseAccountModal = useCallback(
-    event => {
-      if (activeModal && !event.target?.closest('.bougth')) {
-        setActiveModal(false);
-      }
-    },
-    [activeModal],
-  );
+  const [bougthItem, setBougthItem] = useState<boolean>(false);
+
+  const handleSetBougthItem = () => {
+    setBougthItem(!bougthItem);
+    handleOpenModal();
+    cart.addQuantityCart(1);
+  }
 
   return (
     <Container>
@@ -51,19 +55,23 @@ const Card: React.FC<ICardProps> = ({
       <Content>
         <Title>{title}</Title>
         <Price>{price}</Price>
-        <ComponentButton height="52px" marginTop="27px" onClick={() => {handleOpenAccountModal()}}>COMPRAR</ComponentButton>
-        <ComponentButton
-          height="52px"
-          marginTop="27px"
-          isBougth
-          backgroundColor={colors.darkBlue}
-        >
-          COMPRADO!
-        </ComponentButton>
+        <ComponentVisible when={!bougthItem}>
+          <ComponentButton height="52px" marginTop="27px" onClick={() => { handleSetBougthItem() }}>COMPRAR</ComponentButton>
+        </ComponentVisible>
+        <ComponentVisible when={bougthItem}>
+          <ComponentButton
+            height="52px"
+            marginTop="27px"
+            isBougth
+            backgroundColor={colors.darkBlue}
+          >
+            COMPRADO!
+          </ComponentButton>
+        </ComponentVisible>
       </Content>
       <BoughtItem ref={modalRef} />
     </Container>
-    
+
   )
 }
 

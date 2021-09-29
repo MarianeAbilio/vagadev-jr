@@ -24,6 +24,8 @@ import {
   CloseMenu,
 } from './styles';
 
+import useCart from '../../hooks/useCart';
+
 import HamburguerMenuIcon from '../../assets/icon_hamburguer.svg';
 import LogoN1Rush from '../../assets/logo-n1rush.png';
 import ContactIcon from '../../assets/paper-plane.svg';
@@ -35,6 +37,8 @@ import ComponentVisible from '../Visible';
 
 
 const Header: React.FC = () => {
+
+  const cart = useCart();
 
   const menu = [
     {
@@ -104,7 +108,7 @@ const Header: React.FC = () => {
             <MenuItem>
               <MenuIcon src={BagIcon} width="22px" />
               <CartQuantity>
-                <LabelCartQuantity>2</LabelCartQuantity>
+                <LabelCartQuantity>{cart.cartQuantity}</LabelCartQuantity>
               </CartQuantity>
             </MenuItem>
           </Menu>
