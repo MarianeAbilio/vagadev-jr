@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import {
   Container,
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <Container>
+    <Container isMenuOpen={menuOpen}>
       <Content>
         <Left>
           <HamburguerMenu
@@ -110,31 +110,31 @@ const Header: React.FC = () => {
           </Menu>
         </Right>
         <ComponentVisible when={menuOpen}>
-        <NavbarContainer>
-          <Indicator />
-          <NavbarContent>
-            {menu.map(x => {
-              return (
-                <>
-                <NavbarSection key={x.title}>
-                  <NavbarItemsTitle>
-                    {x.title}
-                  </NavbarItemsTitle>
-                  {x.items.map(y => {
-                    return (
-                      <NavbarItems key={y}>
-                        {y}
-                      </NavbarItems>
-                    )
-                  })}
-                </NavbarSection>
-                <MobileMenuDivisor />
-                </>
-              )
-            })}
-          </NavbarContent>
-          <NavbarContentDownSquare />
-        </NavbarContainer>
+          <NavbarContainer>
+            <Indicator />
+            <NavbarContent>
+              {menu.map(x => {
+                return (
+                  <React.Fragment key={x.title}>
+                    <NavbarSection >
+                      <NavbarItemsTitle>
+                        {x.title}
+                      </NavbarItemsTitle>
+                      {x.items.map(y => {
+                        return (
+                          <NavbarItems key={y}>
+                            {y}
+                          </NavbarItems>
+                        )
+                      })}
+                    </NavbarSection>
+                    <MobileMenuDivisor />
+                  </React.Fragment>
+                )
+              })}
+            </NavbarContent>
+            <NavbarContentDownSquare />
+          </NavbarContainer>
         </ComponentVisible>
       </Content>
     </Container>

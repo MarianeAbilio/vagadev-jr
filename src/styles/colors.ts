@@ -5,6 +5,7 @@ const colors = {
   silver: '#EBEBEB',
   deepBlue: '#062C38',
   transparent: 'transparent',
+  blackOpacity: 'rgba(0, 0, 0, 0.65)',
   boxShadowColor: '0px 4px 20px 7px rgba(0, 0, 0, 0.07)',
 };
 
